@@ -17,7 +17,13 @@ void setup() {
   }
   Serial.println(F("Found LC709203F"));
   Serial.print("Version: 0x"); Serial.println(lc.getICversion(), HEX);
-
+  
+  /* **********************README********************************************************************
+   *  With different battery, you will have to change the value of MAH
+   *   eg: if you are using a 1200mAh battery, then change
+   *   "LC709203F_APA_500MAH"  to "LC709203F_APA_1200MAH"
+   *  You can normally find the value on the package that came with the battery or datasheet
+   ************************README**********************************************************************/
   lc.setPackSize(LC709203F_APA_500MAH);
 
   lc.setAlarmVoltage(3.8);
